@@ -1,0 +1,6 @@
+[submodule "py-graph"]
+	path = py-graph
+	url = https://github.com/SeanAvery/py-graph.git
+[submodule "py-talk"]
+	path = py-talk
+	url = https://github.com/SeanAvery/py-talk
