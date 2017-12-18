@@ -1,15 +1,17 @@
 from time import sleep
 from twisted.internet.protocol import Protocol, Factory
 from twisted.internet import reactor
-from twisted.internet.endpoints import TCP4ServerEndpoint
+from twisted.internet.endpoints import TCP4ServerEndpoint, connectProtocol
 from utils import generate_uuid
 
 class Validator():
     def __init__(self, id, weight):
         self.id = id
         self.weight = weight
-        self.endpoint = TCP4ServerEndpoint(reactor, 0)
+        self.endpoint = TCP4ServerEndpoint(reactor, 3344)
         self.endpoint.listen(PeerFactory())
+        self.client_port = TCP4ServerEndpoint(reactor, 'localhos', 3344)
+        self.client
         print('hi i am validator', self.id, self.weight)
 
 
